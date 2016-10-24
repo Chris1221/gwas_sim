@@ -19,7 +19,7 @@
 .PHONY: all git genome_sim clean
 
 # For the moment we only want to build the git commit as we test out the individual dependencies
-all: git
+all: git genome_sim
 
 git: 
 	git add -A
