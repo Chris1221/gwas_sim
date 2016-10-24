@@ -19,4 +19,15 @@
 # General variable declarations.
 BASE_DIR="~/repos/gwas_sim"
 
+# Here we decide the platform being used and use our best guess to use the correct
+# binary image.
+#
+# You may also replace this whole thing with 
+#	 hapgen2="path_to_your_binary"
+# et cetra.
+#
+# N.B. It is preferable here to use the absolute adress of your binary
+# 	if you are inputing it yourself.
+
+
 
