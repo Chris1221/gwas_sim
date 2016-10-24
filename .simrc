@@ -38,13 +38,10 @@ case "$unamestr" in
 
 	"Darwin" ) 
 		
-		export os="mac"
-		;;
+		export os="mac";;
 
 	"Linux" | "SunOS" ) 
 		
-		export os="linux"
-		;;
- 
+		export os="linux";; 
 esac
 
