@@ -16,17 +16,47 @@
 #
 #	Targets do not follow unix variable convention, but rather are lower case 
 #	with underscores replacing spaces.
-.PHONY: all git genome_sim clean
+.PHONY: all git pre_process genome_sim clean
 
 # For the moment we only want to build the git commit as we test out the individual dependencies
-all: git genome_sim
+all: git 
 
+
+### GIT Updating for sanity
+# 	This rule ensures that changes are synced up to VC at each step. 
+# 	Note that this may only be useful if you have executed
+# 		git clone 
+#	and have your own local repository to hold these files.
+#	This also relies on having
+#		git
+#	installed and configured and a 
+#		./.git
+#	directory present and configured.
 git: 
 	git add -A
 	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."
 
-genome_sim:
+
+### Pre Processing and/or neccessary evils.
+# 	This step should always be executed even when you are not building the whole
+# 	pipeline. I.e. all targets rely on this one.
+# 	
+# 	This should be obvious and should always happen, but just in case it doesn't
+# 	you should know that this is neccessary.
+pre_process:
+	source config.gwas
+
+### Simulate Genomes
+genome_sim: pre_process
 	echo TEST
 
+
+### Cleaning up
+# 	This is the general clean which is executed at 
+#		make clean
+#	and removes files for another run.
+#
+#	Note that this is NOT data cleaning, but rather following makefile
+#	conventions.
 clean:
 	echo CLEAN
