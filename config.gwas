@@ -1,0 +1,22 @@
+# This is the configuration file for the simulation.
+#
+# In this file, variables are specified which relate to various aspects of the simulation. 
+#	If you are intereted or need to edit the variables, please look in the makefile and see where they are used. 
+#	A partial explaination will be given in the comments.
+#
+#	Variables will follow the shell naming conventions.
+#	i.e. upper case and spaces replaced by underscores.
+#
+#	Please note that all variables must be able to be read by the shell
+#	which means that there should be no spaces on either side of =
+#		For example: 
+#			EX=10 is correct
+#		Versus
+#			EX = 10 is incorrect
+
+
+
+# General variable declarations.
+BASE_DIR="~/repos/gwas_sim"
+
+
