@@ -35,13 +35,7 @@ os='unknown'
 unamestr=`uname`
 
 case "$unamestr" in
-
-	"Darwin" ) 
-		
-		export os="mac";;
-
-	"Linux" | "SunOS" ) 
-		
-		export os="linux";; 
+	"Darwin" ) export os='mac';;
+	"Linux" | "SunOS" ) export os='linux';; 
 esac
 
