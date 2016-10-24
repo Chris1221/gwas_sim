@@ -31,11 +31,16 @@ BASE_DIR="~/repos/gwas_sim"
 #
 # Also none of this will work in windows, but you probably already knew that.
 
+find_os ()
+{
 os='unknown'
 unamestr=`uname`
 
 case "$unamestr" in
-	"Darwin" ) export os='mac';;
-	"Linux" | "SunOS" ) export os='linux';; 
+	"Darwin" ) echo 'mac';;
+	"Linux" | "SunOS" )  echo 'linux';; 
 esac
+}
+
+os=`find_os`
 
