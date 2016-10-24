@@ -44,7 +44,7 @@ git:
 # 	This should be obvious and should always happen, but just in case it doesn't
 # 	you should know that this is neccessary.
 pre_process:
-	source config.gwas
+	source .simrc
 
 ### Simulate Genomes
 genome_sim: pre_process
