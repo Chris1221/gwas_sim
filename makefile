@@ -96,7 +96,7 @@ genome_sim:
 	# 	Note that the reference data is not included in the git
 	#	directory for portability. 
 	
-	if [ -e `basename ref/$$ref` ]; \
+	if [ -e ref/`basename $$ref` ]; \
 	then \
 		echo Youve already downloaded the data; \
 	else \
