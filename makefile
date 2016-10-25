@@ -69,14 +69,12 @@ pre_process:
 genome_sim: pre_process
 	
 	{ 					\
-	#TRY					\
 		`wget -P ref/ ${ref}` &&	\
 		echo YES			\
-	} || { 					\
-	#CATCH					\
+	} || { 						
 		echo NO &&			\
 		exit 1				\
-	}					\
+	}					
 
 
 
