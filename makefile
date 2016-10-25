@@ -44,7 +44,9 @@ git:
 # 	This should be obvious and should always happen, but just in case it doesn't
 # 	you should know that this is neccessary.
 pre_process:
-	source .simrc
+	bash .simrc
+	os=`find_os`
+	echo $os
 
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
@@ -54,7 +56,8 @@ pre_process:
 #	Note that we include the binary file configured for unix and mac in 
 #		./bin
 #	However, should you wish to use a different file, 
-genome_sim: pre_process
+genome_sim:
+	make pre_process
 	os=`find_os`
 	echo $os 
 
