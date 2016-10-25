@@ -90,7 +90,12 @@ genome_sim:
 	
 	### First try to download the reference data if it is not there
 	
-	if [ -e `basename ref/$$ref` ] then echo YES else echo NO fi 
+	if [ -e `basename ref/$$ref` ]; \
+	then \
+		echo YES; \
+	else \
+		echo NO; \
+	fi;
 	
 	
 
