@@ -47,7 +47,7 @@ git:
 	git add -A
 	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."
 
-
+	echo $$os
 # !!------------------------------------------!!	
 #		!! DEPRECATED !! 
 #
@@ -115,6 +115,7 @@ genome_sim:
 
 	# Now use HAPGEN2 to simulate 20,000 unrelated controls for CEU
 	# 	Note that I'm hardcoding the HM3 which is not ideal
+	
 	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt; \
 		-l ref/HM3/hapmap3.r2.b36.chr1.legend; \
 		-h ref/HM3/YRI.chr1.hap; \
