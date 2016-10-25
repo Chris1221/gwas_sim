@@ -45,9 +45,7 @@ all: git genome_sim
 #	directory present and configured.
 git: 
 	git add -A
-	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."
-	
-	echo $$hapgen2
+	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."		
 
 # !!------------------------------------------!!	
 #		!! DEPRECATED !! 
@@ -103,10 +101,14 @@ genome_sim:
 	else \
 		wget -P ref/ $$ref; \
 	fi;
-	
-	# Unzip the file with the specific files we need.
-	tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/CEU.chr1.hap HM3/hapmap3.r2.b36.chr1.legend HM3/genetic_map_chr1_combined_b36.txt; \
 
+	if [ ! -d ref/HM3 ]; \
+	then \
+ 	
+		# Unzip the file with the specific files we need.
+		tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/CEU.chr1.hap HM3/hapmap3.r2.b36.chr1.legend HM3/genetic_map_chr1_combined_b36.txt; \
+	fi;
+	
 	# Split it into the correct populations that we want 
 	# and delete the rest which are unwanted
 	#
