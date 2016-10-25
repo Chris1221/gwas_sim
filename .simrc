@@ -54,4 +54,4 @@ export hapgen2="bin/hapgen2_${os}"
 ## Reference file definitions
 #	Note that this must be in IMPUTE2 format.
 
-ref="https://mathgen.stats.ox.ac.uk/wtccc-software/HM3.tgz"
+export ref="https://mathgen.stats.ox.ac.uk/wtccc-software/HM3.tgz"
