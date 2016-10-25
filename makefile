@@ -7,6 +7,11 @@
 # However, each individual portion may also be called seperately by specifying the target name. E.g.
 # 	make QC
 
+
+### Include the variables declared in .simrc
+# 	This replaces the deprecated pre_process make target
+#	and allows for easier manipulation of the variables.
+
 include .simrc
 export $(shell sed 's/=.*//' .simrc)
 
@@ -18,7 +23,7 @@ export $(shell sed 's/=.*//' .simrc)
 #
 #	Targets do not follow unix variable convention, but rather are lower case 
 #	with underscores replacing spaces.
-.PHONY: all git pre_process genome_sim clean
+.PHONY: all git genome_sim clean
 
 ### Set the shell to enable BASH specific syntax
 SHELL := /bin/bash
@@ -43,6 +48,10 @@ git:
 	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."
 
 
+# !!------------------------------------------!!	
+#		!! DEPRECATED !! 
+#
+
 ### Pre Processing and/or neccessary evils.
 # 	This step should always be executed even when you are not building the whole
 # 	pipeline. I.e. all targets rely on this one.
@@ -61,11 +70,14 @@ git:
 #	Eventually I may integrate in autoconf and simply call
 #		./configure
 #	but that is a project for another day.
-pre_process:
-	. ./.simrc
-	
-	echo $$ref
-	
+
+#pre_process:
+#	. ./.simrc
+
+#	
+#		!! DEPRECATED !! 
+# !!------------------------------------------!!	
+
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
 #		hapgen2 

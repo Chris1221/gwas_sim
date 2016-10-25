@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This is the configuration or runtime commands (rc) file for the simulation.
 #
 # In this file, variables are specified which relate to various aspects of the simulation. 
@@ -31,18 +33,22 @@ BASE_DIR="~/repos/gwas_sim"
 #
 # Also none of this will work in windows, but you probably already knew that.
 
-#find_os ()
-#{
-#os='unknown'
-#unamestr=`uname`
+### Leave this for now, but come back later.
+#	Something about a missing seperator. 
+#	I think make is having a hard time reading bash functions.
+
+#find_os () 
+#{ 
+#	os='unknown'
+#	unamestr=`uname`
 #
-#case "$unamestr" in
-#	"Darwin" ) echo 'mac';;
-#	"Linux" | "SunOS" )  echo 'linux';; 
-#esac
+#	case "$unamestr" in
+#		"Darwin" ) echo 'mac';;
+#		"Linux" | "SunOS" )  echo 'linux';; 
+#	esac
 #}
 
-export os=mac
+export os=`uname`
 
 
 
