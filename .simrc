@@ -42,4 +42,4 @@ case "$unamestr" in
 esac
 }
 
-export -f find_os
+export os=`find_os`
