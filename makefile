@@ -103,8 +103,8 @@ genome_sim:
 		wget -P ref/ $$ref; \
 	fi;
 	
-	# Unzip the file
-	tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/YRI.chr2.hap; \
+	# Unzip the file with the specific files we need.
+	tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/CEU.chr1.hap HM3/hapmap3.r2.b36.chr1.legend HM3/genetic_map_chr1_combined_b36.txt; \
 
 	# Split it into the correct populations that we want 
 	# and delete the rest which are unwanted
