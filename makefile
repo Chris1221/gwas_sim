@@ -104,7 +104,7 @@ genome_sim:
 	fi;
 	
 	# Unzip the file with the specific files we need.
-	tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/CEU.chr1.hap HM3/hapmap3.r2.b36.chr1.legend HM3/genetic_map_chr1_combined_b36.txt; \
+	tar -C ref -xvzf ref/`basename $$ref` `basename $$ref`/YRI.chr1.hap `basename $$ref`/CEU.chr1.hap `basename $$ref`/hapmap3.r2.b36.chr1.legend `basename $$ref`/genetic_map_chr1_combined_b36.txt; \
 
 	# Split it into the correct populations that we want 
 	# and delete the rest which are unwanted
@@ -113,6 +113,8 @@ genome_sim:
 	#
 	# We will also only take the first chromosome
 
+	# Now use HAPGEN2 to simulate 20,000 unrelated controls
+	#$$hapgen2 -m ref/HM3/
 
 
 ### Cleaning up
