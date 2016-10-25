@@ -86,7 +86,8 @@ git:
 #	Note that we include the binary file configured for unix and mac in 
 #		./bin
 #	However, should you wish to use a different file, 
-genome_sim: pre_process
+genome_sim: 
+	echo $$ref $$os
 	
 	
 
