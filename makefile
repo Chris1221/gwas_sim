@@ -122,7 +122,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
 		-h ref/HM3/YRI.chr1.hap \
 		-n 100 100 \
-		-dl 1085679 1 1.5 2.25 \ #JUNK
+		-dl 1085679 1 1.5 2.25 \
 		-o output/ceu; 
 
 
