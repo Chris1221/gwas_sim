@@ -89,6 +89,12 @@ git:
 genome_sim: 
 	
 	### First try to download the reference data if it is not there
+	#	Download the file
+	#	unzip it
+	#	split
+	# 
+	# 	Note that the reference data is not included in the git
+	#	directory for portability. 
 	
 	if [ -e `basename ref/$$ref` ]; \
 	then \
@@ -97,7 +103,16 @@ genome_sim:
 		wget -P ref/ $$ref; \
 	fi;
 	
-	
+	# Unzip the file
+	tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap; \
+		HM3/CEU.chr1/hap
+
+	# Split it into the correct populations that we want 
+	# and delete the rest which are unwanted
+	#
+	# For us currently this is CEU and YRI
+	#
+	# We will also only take the first chromosome
 
 
 
