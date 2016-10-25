@@ -47,7 +47,7 @@ git:
 	git add -A
 	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."
 	
-	echo $$os
+	echo $$hapgen2
 
 # !!------------------------------------------!!	
 #		!! DEPRECATED !! 
