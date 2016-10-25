@@ -117,12 +117,16 @@ genome_sim:
 
 	# Now use HAPGEN2 to simulate 20,000 unrelated controls for CEU
 	# 	Note that I'm hardcoding the HM3 which is not ideal
-	
+	#	
+	#	Also note that the diesease locus
+	#		-dl 
+	#	is bogus and this is a workaround to known bug in
+	#	hapgen2.
 	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
 		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
 		-h ref/HM3/YRI.chr1.hap \
-		-n 100 100 \
-		-dl 1085679 1 1.5 2.25 \
+		-n 100 0 \
+		-dl 744045 1 1.5 2.25 \
 		-o output/ceu; 
 
 
