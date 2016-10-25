@@ -61,7 +61,7 @@ git:
 pre_process:
 	. ./.simrc
 	
-	echo ref
+	echo $$ref
 	
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
@@ -73,8 +73,7 @@ pre_process:
 #	However, should you wish to use a different file, 
 genome_sim: pre_process
 	
-	echo $$ref	
-		
+	
 
 
 
