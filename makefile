@@ -92,9 +92,9 @@ genome_sim:
 	
 	if [ -e `basename ref/$$ref` ]; \
 	then \
-		echo YES; \
+		echo Youve already downloaded the data; \
 	else \
-		echo NO; \
+		wget -P ref/ $$ref; \
 	fi;
 	
 	
