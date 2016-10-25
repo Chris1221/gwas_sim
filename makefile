@@ -61,6 +61,8 @@ git:
 pre_process:
 	. ./.simrc
 	
+	export ref
+	
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
 #		hapgen2 
@@ -70,7 +72,7 @@ pre_process:
 #		./bin
 #	However, should you wish to use a different file, 
 genome_sim: pre_process
-	export ref
+	
 	echo $$ref	
 		
 
