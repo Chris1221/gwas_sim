@@ -45,8 +45,8 @@ git:
 # 	you should know that this is neccessary.
 pre_process:
 	bash .simrc
-	os=`find_os`
-	echo $os
+
+	echo ${os}
 
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
