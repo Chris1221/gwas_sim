@@ -43,11 +43,21 @@ git:
 # 	
 # 	This should be obvious and should always happen, but just in case it doesn't
 # 	you should know that this is neccessary.
+#
+#	I'm not exactly sure why
+#		. ./.simrc
+#	correctly exports the shell variables and 
+#		sh .simrc
+#		bash .simrc
+#		./.simrc
+#	all do not.
+#
+#	Eventually I may integrate in autoconf and simply call
+#		./configure
+#	but that is a project for another day.
 pre_process:
-	bash .simrc
-
-	echo ${os}
-
+	. ./.simrc
+	
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
 #		hapgen2 
@@ -56,10 +66,9 @@ pre_process:
 #	Note that we include the binary file configured for unix and mac in 
 #		./bin
 #	However, should you wish to use a different file, 
-genome_sim:
-	make pre_process
-	os=`find_os`
-	echo $os 
+genome_sim: pre_process
+	
+	echo ${os} 
 
 
 ### Cleaning up
