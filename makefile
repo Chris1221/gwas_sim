@@ -87,7 +87,15 @@ git:
 #		./bin
 #	However, should you wish to use a different file, 
 genome_sim: 
-	echo $$ref $$os
+	
+	### First try to download the reference data if it is not there
+	
+	if [ -e `basename ref/$$ref` ] 
+	then
+		echo YES
+	else 
+		echo NO
+	fi 
 	
 	
 
