@@ -73,7 +73,7 @@ pre_process:
 genome_sim: pre_process
 	
 	{ \ 
-		`wget -P ref/ ${ref}` && \ 
+		wget -P ref/ ${ref} && \ 
 		echo YES \ 
 	} || { \			
 		echo NO && \
