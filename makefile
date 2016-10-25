@@ -18,6 +18,10 @@
 #	with underscores replacing spaces.
 .PHONY: all git pre_process genome_sim clean
 
+### Set the shell to enable BASH specific syntax
+SHELL := /bin/bash
+
+
 # For the moment we only want to build the git commit as we test out the individual dependencies
 all: git genome_sim 
 
@@ -68,12 +72,12 @@ pre_process:
 #	However, should you wish to use a different file, 
 genome_sim: pre_process
 	
-	{ 					;\
-		`wget -P ref/ ${ref}` &&	;\
-		echo YES			;\
-	} || { 					;\
-		echo NO &&			;\
-		exit 1				;\
+	{ 
+		`wget -P ref/ ${ref}` &&
+		echo YES
+	} || { 					
+		echo NO &&		
+		exit 1
 	}					
 
 
