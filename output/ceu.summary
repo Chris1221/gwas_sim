@@ -5,7 +5,7 @@
 ===================================================================
 
 Command line input is:
-bin/hapgen2_Darwin -m ref/HM3/genetic_map_chr1_combined_b36.txt -l ref/HM3/hapmap3.r2.b36.chr1.legend -h ref/HM3/YRI.chr1.hap -n 100 0 -dl 744045 1 1.5 2.25 -o output/ceu 
+bin/hapgen2_Darwin -m ref/HM3/genetic_map_chr1_combined_b36.txt -l ref/HM3/hapmap3.r2.b36.chr1.legend -h ref/HM3/YRI.chr1.hap -n 20000 0 -dl 744045 1 1.5 2.25 -o output/ceu 
 
 FILE INPUTS
                                             haplotype file: ref/HM3/YRI.chr1.hap
@@ -16,7 +16,7 @@ FILE OUTPUTS
                                                output file: output/ceu
                                               summary file: output/ceu.summary
 PARAMETER INPUTS
-                                  no. controls to simulate: 100
+                                  no. controls to simulate: 20000
                                      no. cases to simulate: 0
                                               disease loci: (1) 744045 
                                            disease alleles: (1) 1 
@@ -36,21 +36,10 @@ Reading haplotype and legend files: looking for SNPs in [0, 500000000] ... done
                                 number of SNPs in interval: 116415
 
 
-Random seed set to 0.848942
+Random seed set to 0.850374
 theta not set, so setting to a default value of 0.166183
 
 Processing disease loci ... done 
 
 
-Simulating haplotypes ... done
-
-Writing output to files 
-writing output file output/ceu.controls.haps
-writing output file output/ceu.cases.haps
-writing output file output/ceu.legend
-writing output file output/ceu.controls.gen
-writing output file output/ceu.cases.gen
-writing output file output/ceu.controls.sample
-writing output file output/ceu.cases.sample
-
-HAPGEN took 43 seconds to complete. Have a nice day! 
+Simulating haplotypes ... 
