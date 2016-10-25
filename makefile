@@ -61,7 +61,7 @@ git:
 pre_process:
 	. ./.simrc
 	
-	echo $$ref
+	echo $(ref)
 	
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
