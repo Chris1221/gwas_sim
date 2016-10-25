@@ -105,7 +105,7 @@ genome_sim:
 	
 	# Unzip the file
 	tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap; \
-		HM3/CEU.chr1/hap
+		HM3/CEU.chr1.hap
 
 	# Split it into the correct populations that we want 
 	# and delete the rest which are unwanted
