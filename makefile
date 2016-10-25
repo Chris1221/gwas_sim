@@ -68,7 +68,16 @@ pre_process:
 #	However, should you wish to use a different file, 
 genome_sim: pre_process
 	
-	echo ${os} 
+	{ 					\
+	#TRY					\
+		`wget -P ref/ ${ref}` &&	\
+		echo YES			\
+	} || { 					\
+	#CATCH					\
+		echo NO &&			\
+		exit 1				\
+	}					\
+
 
 
 ### Cleaning up
