@@ -7,6 +7,9 @@
 # However, each individual portion may also be called seperately by specifying the target name. E.g.
 # 	make QC
 
+include .simrc
+export $(shell sed 's/=.*//' .simrc)
+
 ### The following are technicalities of the makefile format
 #
 # 	We declare the various stages of the simulation to be phony targets
