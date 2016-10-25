@@ -48,7 +48,7 @@ BASE_DIR="~/repos/gwas_sim"
 #	esac
 #}
 
-os=$(shell uname)
+export os := $(shell uname)
 
 
 
