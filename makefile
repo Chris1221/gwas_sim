@@ -7,7 +7,6 @@
 # However, each individual portion may also be called seperately by specifying the target name. E.g.
 # 	make QC
 
-
 ### The following are technicalities of the makefile format
 #
 # 	We declare the various stages of the simulation to be phony targets
@@ -71,8 +70,9 @@ pre_process:
 #		./bin
 #	However, should you wish to use a different file, 
 genome_sim: pre_process
-	
-	@echo $$ref 	
+	export ref
+	echo $$ref	
+		
 
 
 
