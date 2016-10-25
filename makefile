@@ -103,9 +103,7 @@ genome_sim:
 	fi;
 
 	if [ ! -d ref/HM3 ]; \
-	then \
- 	
-		# Unzip the file with the specific files we need.
+	then \	
 		tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/CEU.chr1.hap HM3/hapmap3.r2.b36.chr1.legend HM3/genetic_map_chr1_combined_b36.txt; \
 	fi;
 	
