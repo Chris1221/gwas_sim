@@ -125,10 +125,12 @@ genome_sim:
 	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
 		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
 		-h ref/HM3/YRI.chr1.hap \
-		-n 100 0 \
+		-n 20000 0 \
 		-dl 744045 1 1.5 2.25 \
 		-o output/ceu; 
 
+clean_up_gen: genome_sim
+	 
 
 ### Cleaning up
 # 	This is the general clean which is executed at 
