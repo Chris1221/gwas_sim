@@ -72,7 +72,7 @@ pre_process:
 #	However, should you wish to use a different file, 
 genome_sim: pre_process
 	
-	wget $$ref 	
+	wget $${ref} 	
 
 
 
