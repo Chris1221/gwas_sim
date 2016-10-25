@@ -46,8 +46,9 @@ all: git genome_sim
 git: 
 	git add -A
 	git commit -am "Auto update GWAS_SIM, see ChangeLog for more details."
-
+	
 	echo $$os
+
 # !!------------------------------------------!!	
 #		!! DEPRECATED !! 
 #
