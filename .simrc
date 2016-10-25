@@ -48,7 +48,7 @@ BASE_DIR="~/repos/gwas_sim"
 #	esac
 #}
 
-os="mac"
+os=`shell uname`
 
 
 
