@@ -137,7 +137,7 @@ genome_sim:
 		sh/ceu.qsub \
 		$$hapgen2 \
 
-	qsub -N CEU \
+	qsub -N YRI \
 		-t 1-10:1 \
 		-v hap='$$hapgen2' \
 		sh/yri.qsub \
