@@ -1,0 +1,20 @@
+#!/bin/bash
+#$ -S /bin/bash
+#$ -q abaqus.q
+#$ -l qname=abaqus.q
+#$ -cwd
+#$ -V
+#$ -l mf=192G
+#$ -j y
+#$ -o ~/$JOB_NAME
+
+#!/bin/bash
+
+$hap -m ref/hm3/genetic_map_chr1_combined_b36.txt \
+	-l ref/hm3/hapmap3.r2.b36.chr1.legend \
+	-h ref/hm3/ceu.chr1.hap \
+	-n 5000 0 \
+	-dl 744045 1 1.5 2.25 \
+	-o output/ceu_$SGE_TASK_ID; 
+
+

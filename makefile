@@ -122,14 +122,30 @@ genome_sim:
 	#		-dl 
 	#	is bogus and this is a workaround to known bug in
 	#	hapgen2.
-	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
-		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
-		-h ref/HM3/YRI.chr1.hap \
-		-n 2000 0 \
+
+	# This is now qsubbed
+#	$$hapgen2 -m ref/hm3/genetic_map_chr1_combined_b36.txt \
+		-l ref/hm3/hapmap3.r2.b36.chr1.legend \
+		-h ref/hm3/yri.chr1.hap \
+		-n 1000 0 \
 		-dl 744045 1 1.5 2.25 \
 		-o output/ceu; 
 
-	# And now for YRI.
+	qsub -N CEU \
+		-t 1-10:1 \
+		-v hap='$$hapgen2' \
+		sh/ceu.qsub \
+		$$hapgen2 \
+
+	qsub -N CEU \
+		-t 1-10:1 \
+		-v hap='$$hapgen2' \
+		sh/yri.qsub \
+		$$hapgen2 \
+
+
+	
+
 
 ### Clean up the generated gen files
 #	This step cleans up unneccesary files and formats the output for
