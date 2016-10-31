@@ -141,14 +141,13 @@ genome_sim:
 		-v hap=$(hapgen2) \
 		sh/yri.qsub 	
 
-	
-
-
 ### Clean up the generated gen files
 #	This step cleans up unneccesary files and formats the output for
 #	easy integration into the next portion.
 clean_up_gen: genome_sim
-	rm hapgen2.summary 
+	rm -f output/*.cases.*
+
+	
 
 ### Cleaning up
 # 	This is the general clean which is executed at 
