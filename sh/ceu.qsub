@@ -6,7 +6,7 @@
 #$ -V
 #$ -l mf=192G
 #$ -j y
-#$ -o ~/$JOB_NAME
+#$ -o /home/hpc2862/repos/gwas_sim/logs/$JOB_NAME.txt
 
 #!/bin/bash
 
