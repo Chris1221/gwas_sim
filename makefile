@@ -95,7 +95,7 @@ genome_sim:
 	# 	Note that the reference data is not included in the git
 	#	directory for portability. 
 	
-	if [ -e ref/`basename $$ref` ]; \
+	if [ -e ref/HM3.tgz ]; \
 	then \
 		echo Youve already downloaded the data; \
 	else \
