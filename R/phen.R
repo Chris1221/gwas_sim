@@ -71,9 +71,13 @@ make_sample <- function(phen, file) {
 }
 
 
-ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)
-yri_effects <- c(3,5,2,5,20,3,7,8,2,13)
+ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)/10
+yri_effects <- c(3,5,2,5,20,3,7,8,2,13)/5
 
-	fread("output/ceu.controls.gen") %>% 
-		phen(snps = "snplist.txt", effects = c(0.2, 0.25, 0.25, 0.3, 0.1, 0.05, 0.45, 0.4, 0.1, 0.75)) %>% 
-		make_sample(paste0(file = "output/ceu_", i, ".sample"))
+fread("output/ceu.controls.gen") %>% 
+	phen(snps = "snplist.txt", effects = ceu_effects) %>% 
+	make_sample(paste0(file = "output/ceu_", i, ".sample"))
+
+fread("output/yri.controls.gen") %>% 
+	phen(snps = "snplist.txt", effects = yri_effects) %>% 
+	make_sample(paste0(file = "output/ceu_", i, ".sample"))
