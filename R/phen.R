@@ -37,9 +37,9 @@ phen <- function(gen, snps, nc, effects){
 		message(i)
 	}
 
-	phenotypes = colsums(phenotype_matrix)
+	phenotypes = colSums(phenotype_matrix)
 
-	phenotypes = phenotypes + rnorm(1000)
+	phenotypes = phenotypes + rnorm(length(phenotypes))
 	
 	return(phenotypes)
 }
@@ -74,11 +74,6 @@ make_sample <- function(phen, file) {
 ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)
 yri_effects <- c(3,5,2,5,20,3,7,8,2,13)
 
-
-for(i = 1:10){
-
-	gen <- fread(paste0("output/ceu_", i, ".controls.gen")) %>% 
+	fread("output/ceu.controls.gen") %>% 
 		phen(snps = "snplist.txt", effects = c(0.2, 0.25, 0.25, 0.3, 0.1, 0.05, 0.45, 0.4, 0.1, 0.75)) %>% 
-			make_sample(paste0(file = "output/ceu_", i, ".sample"))
-
-}
+		make_sample(paste0(file = "output/ceu_", i, ".sample"))
