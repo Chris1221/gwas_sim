@@ -55,7 +55,7 @@ export os := $(shell uname)
 ## Binary file definitions
 
 export hapgen2=bin/hapgen2_${os}
-
+export plink=bin/plink2_${os}
 
 ## Reference file definitions
 #	Note that this must be in IMPUTE2 format.

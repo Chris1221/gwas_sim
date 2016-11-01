@@ -140,7 +140,25 @@ genome_sim:
 
 format_gen: genome_sim
 
+	rm output/*.cases.*
+	rm output/*.haps
+	rm output/*.sample
+	
+	# Create sample files and simulate phenotype
 	Rscript R/phen.R
+
+	# Recode as plink phenotype
+	$$plink --oxford-single-chr 1 \
+		--gen output/ceu.controls.gen \ 
+		--sample output/ceu.sample \ 
+		--recode \
+		--out output/ceu
+
+	$$plink --oxford-single-chr 1 \
+		--gen output/yri.controls.gen \ 
+		--sample output/yri.sample \ 
+		--recode \
+		--out output/yri
 
 ### Clean up the generated gen files
 #	This step cleans up unneccesary files and formats the output for
