@@ -160,6 +160,21 @@ format_gen: genome_sim
 		--recode \
 		--out output/yri
 
+combine: format_gen
+	
+	$$plink --file output/ceu \
+		--allow-no-sex \
+		--assoc \
+		--out output/ceu
+
+	$$plink --file output/yri \
+		--allow-no-sex \
+		--assoc \
+		--out output/yri
+
+	Rscript R/assoc.R
+
+
 ### Clean up the generated gen files
 #	This step cleans up unneccesary files and formats the output for
 #	easy integration into the next portion.
