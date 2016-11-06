@@ -1,0 +1,5 @@
+output/yri_chr1
+output/yri_chr2
+output/yri_chr3
+output/yri_chr4
+output/yri_chr5

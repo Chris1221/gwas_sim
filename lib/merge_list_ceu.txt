@@ -1,0 +1,5 @@
+output/ceu_chr1
+output/ceu_chr2
+output/ceu_chr3
+output/ceu_chr4
+output/ceu_chr5
