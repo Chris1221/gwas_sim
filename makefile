@@ -240,23 +240,17 @@ format_gen: genome_sim
 
 	rm output/*.cases.*
 	rm output/*.haps
-	rm output/*.sample
-	
+	rm output/*.sample	
+	rm output/*.log
+	rm output/*.nosex
+	rm output/*.summary
+
+	$$plink --merge-list lib/merge_list_ceu.txt --recode 
+
+
 	# Create sample files and simulate phenotype
 	Rscript R/phen.R
 
-	# Recode as plink phenotype
-	$$plink --oxford-single-chr 1 \
-		--gen output/ceu.controls.gen \ 
-		--sample output/ceu.sample \ 
-		--recode \
-		--out output/ceu
-
-	$$plink --oxford-single-chr 1 \
-		--gen output/yri.controls.gen \ 
-		--sample output/yri.sample \ 
-		--recode \
-		--out output/yri
 
 combine: format_gen
 	
