@@ -1,0 +1,45 @@
+
+===================================================================
+  Welcome to HAPGEN_v2.1.2 (24/03/2011)
+  Zhan Su, Peter Donnelly, Jonathan Marchini
+===================================================================
+
+Command line input is:
+bin/hapgen2_Darwin -m ref/HM3/genetic_map_chr5_combined_b36.txt -l ref/HM3/hapmap3.r2.b36.chr5.legend -h ref/HM3/CEU.chr5.hap -n 4500 0 -dl 101534 1 1.5 2.25 -o output/ceu_chr5 
+
+FILE INPUTS
+                                            haplotype file: ref/HM3/CEU.chr5.hap
+                                               legend file: ref/HM3/hapmap3.r2.b36.chr5.legend
+                                          genetic map file: ref/HM3/genetic_map_chr5_combined_b36.txt
+                                             tag snps file: 
+FILE OUTPUTS
+                                               output file: output/ceu_chr5
+                                              summary file: output/ceu_chr5.summary
+PARAMETER INPUTS
+                                  no. controls to simulate: 4500
+                                     no. cases to simulate: 0
+                                              disease loci: (1) 101534 
+                                           disease alleles: (1) 1 
+                             heterozygote/homozygote risks: (1) 1.50/2.25 
+                                                     lower: 0
+                                                     upper: 500000000
+                                                        Ne: 11418
+                                                     theta: -1
+
+Reading genetic map file ... done
+                                      number of rates read: 207494
+
+
+Reading haplotype and legend files: looking for SNPs in [0, 500000000] ... done
+                                      number of haplotypes: 234
+                                   number of SNPs in total: 87919
+                                number of SNPs in interval: 87919
+
+
+Random seed set to 0.874571
+theta not set, so setting to a default value of 0.165709
+
+Processing disease loci ... done 
+
+
+Simulating haplotypes ... 

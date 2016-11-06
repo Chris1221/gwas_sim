@@ -177,7 +177,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr3.legend \
 		-h ref/HM3/CEU.chr3.hap \
 		-n 4500 0 \
-		-dl 42401 1 1.5 2.25 \
+		-dl 44244 1 1.5 2.25 \
 		-o output/ceu_chr3; 
 
 
@@ -185,7 +185,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr3.legend \
 		-h ref/HM3/YRI.chr3.hap \
 		-n 500 0 \
-		-dl 42401 1 1.5 2.25 \
+		-dl 44244 1 1.5 2.25 \
 		-o output/yri_chr3; 
 
 	# chr4
