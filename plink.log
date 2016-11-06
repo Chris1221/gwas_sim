@@ -1,0 +1,12 @@
+PLINK v1.90b3.42 64-bit (20 Sep 2016)
+Options in effect:
+  --oxford-single-chr 1  
+
+Hostname: Yves-Marcels-MacBook-Pro.local
+Working directory: /Users/yvesmarcel/repos/gwas_sim
+Start time: Sun Nov  6 20:25:45 2016
+
+Error: --oxford-single-chr must be used with .gen input.
+For more information, try 'plink --help [flag name]' or 'plink --help | more'.
+
+End time: Sun Nov  6 20:25:45 2016
