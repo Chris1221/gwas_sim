@@ -77,6 +77,14 @@ git:
 #		!! DEPRECATED !! 
 # !!------------------------------------------!!	
 
+### Make from cluster
+# 
+# 	This is just a helper function to 
+# 	build this from the cluster.
+sub:
+	qsub -N make_from_cluster sh/make_from_cluster.sh
+
+
 ### Simulate Genomes
 #	This is the first step in the simulation pipeline and uses 
 #		hapgen2 
