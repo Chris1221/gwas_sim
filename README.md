@@ -46,10 +46,7 @@ Extra targets:
 
 **Q: What exactly are the default settings?**
 
-> A: The pipeline is set up by default to simulate 
-- 4500 CEU individuals
-- 500 YRI individuals \
-on 5 chromosomes (1 - 5) of the human genome build 36 from the HapMap 3 reference populations. 10 causal Loci are simulated, with two being highly divergent between the populations. This should manifest itself when prinicpal components are derived and the populations are split.
+> A: The pipeline is set up by default to simulate 4500 CEU individuals and 500 YRI individuals on 5 chromosomes (1 - 5) of the human genome build 36 from the HapMap 3 reference populations. 10 causal Loci are simulated, with two being highly divergent between the populations. This should manifest itself when prinicpal components are derived and the populations are split.
 
 **Q: How do I change things to do my own simulation?**
 
