@@ -126,21 +126,91 @@ genome_sim:
 	#		-dl 
 	#	is bogus and this is a workaround to known bug in
 	#	hapgen2.
-	
-	for chr in 1 2 3 4 5; do \
-		$$hapgen2 -m ref/HM3/genetic_map_chr$$chr_combined_b36.txt \
-			-l ref/HM3/hapmap3.r2.b36.chr$$chr.legend \
-			-h ref/HM3/CEU.chr$$chr.hap \
-			-n 4500 0 \
-			-dl 744045 1 1.5 2.25 \
-			-o output/ceu_$$chr; 
-		$$hapgen2 -m ref/HM3/genetic_map_chr$$chr_combined_b36.txt \
-			-l ref/HM3/hapmap3.r2.b36.chr$$chr.legend \
-			-h ref/HM3/YRI.chr$$chr.hap \
-			-n 500 0 \
-			-dl 744045 1 1.5 2.25 \
-			-o output/yri_$$chr; 
-	done
+	#
+	#	Note also that we must individually simulate the 
+	#	chromosomes because we have to input
+	#	one bogus loci per chromosome and I had to do this
+	#	manually to find one that actually exists.
+
+	# chr1
+	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
+		-h ref/HM3/CEU.chr1.hap \
+		-n 4500 0 \
+		-dl 744045 1 1.5 2.25 \
+		-o output/ceu_chr1; 
+
+
+	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
+		-h ref/HM3/YRI.chr1.hap \
+		-n 500 0 \
+		-dl 744045 1 1.5 2.25 \
+		-o output/yri_chr1; 
+
+	# chr2
+	$$hapgen2 -m ref/HM3/genetic_map_chr2_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr2.legend \
+		-h ref/HM3/CEU.chr2.hap \
+		-n 4500 0 \
+		-dl 53495 1 1.5 2.25 \
+		-o output/ceu_chr2; 
+
+
+	$$hapgen2 -m ref/HM3/genetic_map_chr2_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr2.legend \
+		-h ref/HM3/YRI.chr2.hap \
+		-n 500 0 \
+		-dl 53495 1 1.5 2.25 \
+		-o output/yri_chr2; 
+
+	# chr3
+	$$hapgen2 -m ref/HM3/genetic_map_chr3_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr3.legend \
+		-h ref/HM3/CEU.chr3.hap \
+		-n 4500 0 \
+		-dl 64412 1 1.5 2.25 \
+		-o output/ceu_chr3; 
+
+
+	$$hapgen2 -m ref/HM3/genetic_map_chr3_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr3.legend \
+		-h ref/HM3/YRI.chr3.hap \
+		-n 500 0 \
+		-dl 64412 1 1.5 2.25 \
+		-o output/yri_chr3; 
+
+	# chr4
+	$$hapgen2 -m ref/HM3/genetic_map_chr4_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr4.legend \
+		-h ref/HM3/CEU.chr4.hap \
+		-n 4500 0 \
+		-dl 59567 1 1.5 2.25 \
+		-o output/ceu_chr4; 
+
+
+	$$hapgen2 -m ref/HM3/genetic_map_chr4_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr4.legend \
+		-h ref/HM3/YRI.chr4.hap \
+		-n 500 0 \
+		-dl 59567 1 1.5 2.25 \
+		-o output/yri_chr4; 
+
+	# chr5
+	$$hapgen2 -m ref/HM3/genetic_map_chr5_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr5.legend \
+		-h ref/HM3/CEU.chr5.hap \
+		-n 4500 0 \
+		-dl 165878 1 1.5 2.25 \
+		-o output/ceu_chr5; 
+
+
+	$$hapgen2 -m ref/HM3/genetic_map_chr5_combined_b36.txt \
+		-l ref/HM3/hapmap3.r2.b36.chr5.legend \
+		-h ref/HM3/YRI.chr5.hap \
+		-n 500 0 \
+		-dl 165878 1 1.5 2.25 \
+		-o output/yri_chr5; 
 
 
 format_gen: genome_sim
