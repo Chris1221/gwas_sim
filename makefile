@@ -226,7 +226,7 @@ genome_sim:
 #	Remove the haps becuase they're useless here.
 #
 #	Sorry for the weird indenting here, makefiles are stupid.
-gen_to_ped:
+gen_to_ped: genome_sim
 
 	for chr in 1 2 3 4 5; do \
 		$$plink --oxford-single-chr $$chr --gen output/ceu_chr$$chr.controls.gen --sample output/ceu_chr$$chr.controls.sample --make-bed --out output/ceu_chr$$chr; \
@@ -236,7 +236,10 @@ gen_to_ped:
 		$$plink --oxford-single-chr $$chr --gen output/yri_chr$$chr.controls.gen --sample output/yri_chr$$chr.controls.sample --make-bed --out output/yri_chr$$chr; \
 	done
 
-format_gen: genome_sim
+### Merge all the ped files together
+#
+#
+merge_ped: gen_to_ped
 
 	rm output/*.cases.*
 	rm output/*.haps
@@ -245,10 +248,13 @@ format_gen: genome_sim
 	rm output/*.nosex
 	rm output/*.summary
 
-	$$plink --merge-list lib/merge_list_ceu.txt --recode 
+	$$plink --merge-list lib/merge_list_ceu.txt --recode --out output/ceu 
+	$$plink --merge-list lib/merge_list_yri.txt --recode --out output/yri 
 
-
-	# Create sample files and simulate phenotype
+### Create new phenotypes
+#
+#
+sim_phen:
 	Rscript R/phen.R
 
 
