@@ -1,0 +1,17 @@
+PLINK v1.90b3.42 64-bit (20 Sep 2016)
+Options in effect:
+  --gen output/ceu_chr4.controls.gen
+  --make-bed
+  --out output/ceu_chr4
+  --oxford-single-chr 4
+  --sample output/ceu_chr4.sample
+
+Hostname: Yves-Marcels-MacBook-Pro.local
+Working directory: /Users/yvesmarcel/repos/gwas_sim
+Start time: Sun Nov  6 20:30:08 2016
+
+Random number seed: 1478464208
+4096 MB RAM detected; reserving 2048 MB for main workspace.
+Error: Failed to open output/ceu_chr4.sample.
+
+End time: Sun Nov  6 20:30:08 2016

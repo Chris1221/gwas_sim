@@ -224,20 +224,18 @@ genome_sim:
 #	
 #	But don't delete them quite yet. 
 #	Remove the haps becuase they're useless here.
-gen_to_ped: 
-	for chr in 1 2 3 4 5; do \
-		$$plink --oxford-single-chr $$chr \
-			--gen output/ceu_chr$$chr.controls.gen \ 
-			--sample output/ceu_chr$$chr.sample \ 
-			--make-bed \
-			--out output/ceu_chr$$chr;
+#
+#	Sorry for the weird indenting here, makefiles are stupid.
+gen_to_ped:
 
-		$$plink --oxford-single-chr $$chr \
-			--gen output/yri_chr$$chr.controls.gen \ 
-			--sample output/yri_chr$$chr.sample \ 
-			--make-bed \
-			--out output/yri_chr$$chr;
+	for chr in 1 2 3 4 5; do \
+		$$plink --oxford-single-chr $$chr --gen output/ceu_chr$$chr.controls.gen --sample output/ceu_chr$$chr.sample --make-bed --out output/ceu_chr$$chr; \
 	done
+
+	for chr in 1 2 3 4 5; do \
+		$$plink --oxford-single-chr $$chr --gen output/yri_chr$$chr.controls.gen --sample output/yri_chr$$chr.sample --make-bed --out output/yri_chr$$chr;
+	done
+
 format_gen: genome_sim
 
 	rm output/*.cases.*
