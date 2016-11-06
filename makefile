@@ -161,7 +161,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr2.legend \
 		-h ref/HM3/CEU.chr2.hap \
 		-n 4500 0 \
-		-dl 53495 1 1.5 2.25 \
+		-dl 18228 1 1.5 2.25 \
 		-o output/ceu_chr2; 
 
 
@@ -169,7 +169,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr2.legend \
 		-h ref/HM3/YRI.chr2.hap \
 		-n 500 0 \
-		-dl 53495 1 1.5 2.25 \
+		-dl 18228 1 1.5 2.25 \
 		-o output/yri_chr2; 
 
 	# chr3
@@ -177,7 +177,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr3.legend \
 		-h ref/HM3/CEU.chr3.hap \
 		-n 4500 0 \
-		-dl 64412 1 1.5 2.25 \
+		-dl 42401 1 1.5 2.25 \
 		-o output/ceu_chr3; 
 
 
@@ -185,7 +185,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr3.legend \
 		-h ref/HM3/YRI.chr3.hap \
 		-n 500 0 \
-		-dl 64412 1 1.5 2.25 \
+		-dl 42401 1 1.5 2.25 \
 		-o output/yri_chr3; 
 
 	# chr4
@@ -193,7 +193,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr4.legend \
 		-h ref/HM3/CEU.chr4.hap \
 		-n 4500 0 \
-		-dl 59567 1 1.5 2.25 \
+		-dl 63508 1 1.5 2.25 \
 		-o output/ceu_chr4; 
 
 
@@ -201,7 +201,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr4.legend \
 		-h ref/HM3/YRI.chr4.hap \
 		-n 500 0 \
-		-dl 59567 1 1.5 2.25 \
+		-dl 63508 1 1.5 2.25 \
 		-o output/yri_chr4; 
 
 	# chr5
@@ -209,7 +209,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr5.legend \
 		-h ref/HM3/CEU.chr5.hap \
 		-n 4500 0 \
-		-dl 165878 1 1.5 2.25 \
+		-dl 101534 1 1.5 2.25 \
 		-o output/ceu_chr5; 
 
 
@@ -217,7 +217,7 @@ genome_sim:
 		-l ref/HM3/hapmap3.r2.b36.chr5.legend \
 		-h ref/HM3/YRI.chr5.hap \
 		-n 500 0 \
-		-dl 165878 1 1.5 2.25 \
+		-dl 101534 1 1.5 2.25 \
 		-o output/yri_chr5; 
 
 
