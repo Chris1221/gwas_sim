@@ -33,6 +33,7 @@ Convenience targets:
 Simulation targets:
 
 - `genome_sim`: Downloads the reference panel, extracts the specific files, and uses `hapgen2` to simulate the new genomes into `output/`. Attempts to download files if not present. 
+- `gen_to_ped`: Converts the simulated Oxford style genotypes to plink format.
 - `format_gen`: Removes excess files generated along the way and formats the output to prepare for the next step. 
 - `combine`: Combines all chromosomes together into one (or two) files.
 - `package`: Packages all output into a convenience `.tgz` file for sharing. 
@@ -46,7 +47,7 @@ Extra targets:
 
 **Q: What exactly are the default settings?**
 
-> A: The pipeline is set up by default to simulate 4500 CEU individuals and 500 YRI individuals on 5 chromosomes (1 - 5) of the human genome build 36 from the HapMap 3 reference populations. 10 causal Loci are simulated, with two being highly divergent between the populations. This should manifest itself when prinicpal components are derived and the populations are split.
+> A: The pipeline is set up by default to simulate 4500 CEU individuals and 500 YRI individuals on 6 chromosomes (1 - 5) of the human genome build 36 from the HapMap 3 reference populations. 10 causal Loci are simulated, with two being highly divergent between the populations. This should manifest itself when prinicpal components are derived and the populations are split.
 
 **Q: How do I change things to do my own simulation?**
 
