@@ -239,7 +239,7 @@ gen_to_ped: genome_sim
 ### Merge all the ped files together
 #
 #
-merge_ped: gen_to_ped
+merge_ped: 
 
 	rm output/*.cases.*
 	rm output/*.haps
