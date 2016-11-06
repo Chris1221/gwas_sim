@@ -75,9 +75,9 @@ ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)/10
 yri_effects <- c(3,5,2,5,20,3,7,8,2,13)/5
 
 fread("output/ceu.gen") %>% 
-	phen(snps = "output/snplist.txt", effects = ceu_effects) %>% 
+	phen(snps = "lib/snplist.txt", effects = ceu_effects) %>% 
 	make_sample(file = "output/ceu.sample")
 
 fread("output/yri.gen") %>% 
-	phen(snps = "output/snplist.txt", effects = yri_effects) %>% 
+	phen(snps = "lib/snplist.txt", effects = yri_effects) %>% 
 	make_sample(file = "output/yri.sample")
