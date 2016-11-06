@@ -233,7 +233,7 @@ gen_to_ped:
 	done
 
 	for chr in 1 2 3 4 5; do \
-		$$plink --oxford-single-chr $$chr --gen output/yri_chr$$chr.controls.gen --sample output/yri_chr$$chr.controls.sample --make-bed --out output/yri_chr$$chr;
+		$$plink --oxford-single-chr $$chr --gen output/yri_chr$$chr.controls.gen --sample output/yri_chr$$chr.controls.sample --make-bed --out output/yri_chr$$chr; \
 	done
 
 format_gen: genome_sim
