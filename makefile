@@ -241,12 +241,12 @@ gen_to_ped: genome_sim
 #
 merge_ped: 
 
-	rm output/*.cases.*
-	rm output/*.haps
-	rm output/*.sample	
-	rm output/*.log
-	rm output/*.nosex
-	rm output/*.summary
+	#rm output/*.cases.*
+	#rm output/*.haps
+	#rm output/*.sample	
+	#rm output/*.log
+	#rm output/*.nosex
+	#rm output/*.summary
 
 	$$plink --merge-list lib/merge_list_ceu.txt --allow-no-sex --recode --out output/ceu 
 	$$plink --merge-list lib/merge_list_yri.txt --allow-no-sex --recode --out output/yri 
