@@ -18,7 +18,7 @@ make sub
 
 To submit the whole make job as a cluster job.
 
-*Note: The config file lives at `.simrc` and any easy modifications will probably be made in there*
+*Note: The config file lives at `.simrc` and any easy modifications will probably be made in there.*
 
 ### Description of `make` targets.
 
@@ -43,6 +43,13 @@ Extra targets:
 - `clean`: Cleans up everything in preparation for a clean run. This will delete reference panels so be careful.
 
 ### FAQ
+
+**Q: What exactly are the default settings?**
+
+> A: The pipeline is set up by default to simulate 
+- 4500 CEU individuals
+- 500 YRI individuals
+on 5 chromosomes (1 - 5) of the human genome build 36 from the HapMap 3 reference populations. 10 causal Loci are simulated, with two being highly divergent between the populations. This should manifest itself when prinicpal components are derived and the populations are split.
 
 **Q: How do I change things to do my own simulation?**
 
