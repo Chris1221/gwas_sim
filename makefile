@@ -248,8 +248,8 @@ merge_ped:
 	#rm output/*.nosex
 	#rm output/*.summary
 
-	$$plink --merge-list lib/merge_list_ceu.txt --allow-no-sex --recode --out output/ceu 
-	$$plink --merge-list lib/merge_list_yri.txt --allow-no-sex --recode --out output/yri 
+	$$plink --merge-list lib/merge_list_ceu.txt --allow-no-sex --recode oxford --out output/ceu 
+	$$plink --merge-list lib/merge_list_yri.txt --allow-no-sex --recode oxford --out output/yri 
 
 ### Create new phenotypes
 #
