@@ -82,7 +82,7 @@ git:
 # 	This is just a helper function to 
 # 	build this from the cluster.
 sub:
-	qsub -N make_from_cluster sh/make_from_cluster.sh
+	qsub -N make_from_cluster sh/make_from_cluster.qsub
 
 
 ### Simulate Genomes
