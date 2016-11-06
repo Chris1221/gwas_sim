@@ -1,4 +1,4 @@
-# gwas_sim
+# Automated GWAS Simulation Pipeline
 Simulate a mixed-population GWAS for use in training exercises. 
 
 ### Quick start
