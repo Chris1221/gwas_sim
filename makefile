@@ -105,7 +105,11 @@ genome_sim:
 	# If the directory is not already expanded then expand it.
 	if [ ! -d ref/HM3 ]; \
 		then \
-			 tar -C ref -xvzf ref/`basename $$ref` HM3/YRI.chr1.hap HM3/CEU.chr1.hap HM3/hapmap3.r2.b36.chr1.legend HM3/genetic_map_chr1_combined_b36.txt; \
+			 tar -C ref -xvzf ref/`basename $$ref` \
+			 HM3/YRI.chr{1..5}.hap \
+			 HM3/CEU.chr{1..5}.hap \
+			 HM3/hapmap3.r2.b36.chr{1..5}.legend \
+			 HM3/genetic_map_chr{1..5}_combined_b36.txt; \
 	fi;
 	
 	# Split it into the correct populations that we want 
@@ -122,21 +126,22 @@ genome_sim:
 	#		-dl 
 	#	is bogus and this is a workaround to known bug in
 	#	hapgen2.
+	
+	for chr in 1 2 3 4 5; do \
+		$$hapgen2 -m ref/HM3/genetic_map_chr$$chr_combined_b36.txt \
+			-l ref/HM3/hapmap3.r2.b36.chr$$chr.legend \
+			-h ref/HM3/CEU.chr$$chr.hap \
+			-n 4500 0 \
+			-dl 744045 1 1.5 2.25 \
+			-o output/ceu_$$chr; 
+		$$hapgen2 -m ref/HM3/genetic_map_chr$$chr_combined_b36.txt \
+			-l ref/HM3/hapmap3.r2.b36.chr$$chr.legend \
+			-h ref/HM3/YRI.chr$$chr.hap \
+			-n 500 0 \
+			-dl 744045 1 1.5 2.25 \
+			-o output/yri_$$chr; 
+	done
 
-	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
-		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
-		-h ref/HM3/CEU.chr1.hap \
-		-n 4500 0 \
-		-dl 744045 1 1.5 2.25 \
-		-o output/ceu; 
-
-
-	$$hapgen2 -m ref/HM3/genetic_map_chr1_combined_b36.txt \
-		-l ref/HM3/hapmap3.r2.b36.chr1.legend \
-		-h ref/HM3/YRI.chr1.hap \
-		-n 500 0 \
-		-dl 744045 1 1.5 2.25 \
-		-o output/yri; 
 
 format_gen: genome_sim
 
