@@ -1,0 +1,16 @@
+#!/bin/bash
+#$ -S /bin/bash
+#$ -q abaqus.q
+#$ -l qname=abaqus.q
+#$ -cwd
+#$ -V
+#$ -l mf=192G
+#$ -j y
+#$ -o /home/hpc2862/repos/gwas_sim/logs/$JOB_NAME
+
+#!/bin/bash
+
+cd ~/repos/gwas_sim/
+
+make genome_sim
+
