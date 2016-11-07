@@ -21,10 +21,9 @@ To submit the whole make job as a cluster job.
 *Note: The config file lives at `.simrc` and any easy modifications will probably be made in there.*
 
 The combined dataset has the following Manhattan plot and is perfectly seperated through MDS. See `make` targets `assoc` and `mds` to produce the following. 
-
-![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/dataset.man.png)
-
-![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/mds.png)
+Manhattan Plot									   |: QQ Plot
+:---------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------:
+![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/dataset.man.png) | ![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/mds.png)
 
 ### Description of `make` targets.
 
