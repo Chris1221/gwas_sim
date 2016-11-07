@@ -28,12 +28,17 @@ export $(shell sed 's/=.*//' .simrc)
 ### Set the shell to enable BASH specific syntax
 SHELL := /bin/bash
 
-
-# For the moment we only want to build the git commit as we test out the individual dependencies
-all: git genome_sim 
+### Set the default target
+#
+#	Simulate the targets
+#	convert them to plink format
+#	merge them togther and simulate a phenotype
+#	package the output into a .tgz archive.
+all: genome_sim gen_to_ped merge_ped sim_phen package
 
 
 ### GIT Updating for sanity
+#
 # 	This rule ensures that changes are synced up to VC at each step. 
 # 	Note that this may only be useful if you have executed
 # 		git clone 
@@ -253,13 +258,21 @@ merge_ped:
 
 ### Create new phenotypes
 #
+#	For details on the phenotype simulation method (very basic)
+#	please read the R file with associated comments.
 #
+#	This creates quite a large matrix in memory so be careful
+#	It also requires data.table::fread, so please install
+#	accordingly.
 sim_phen:
 	Rscript R/phen.R
 
 ### Convert the completed simulation to a .tgz file archive
 #
 #	This file can be shared.
+#
+#	We remove excess files and add in some helper ones
+#	like a README file.
 package:	
 	
 	if [ ! -d tmp ]; then mkdir tmp; fi 
@@ -297,7 +310,22 @@ package:
 
 	tar -cvzf dataset.tgz tmp/
 
+# --------------------------------------------------- #
+#		END SIMULATION HERE		      #
+# --------------------------------------------------- #
 
+### Here we test for the correct associations
+#
+#	Perform a basic GWAS on 
+#		The CEU population
+#		The YRI population
+#		The mixed population
+#	and plot the results using
+#		qqman::manhatttan()
+#	and create qq plots using
+#		qqman::qq()
+#	and perform MDS to look at population seperation 
+#	in plink.
 assoc:
 	
 	$$plink --data output/ceu \
@@ -347,4 +375,4 @@ clean_up_gen: genome_sim
 #	Note that this is NOT data cleaning, but rather following makefile
 #	conventions.
 clean:
-	echo CLEAN
+	echo THIS ISNT WRITTEN YET
