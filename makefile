@@ -297,6 +297,7 @@ package:
 	$$plink --bfile tmp/ceu \
 		--bmerge tmp/yri \
 		--allow-no-sex \
+		--maf 0.01 \
 		--make-bed \
 		--out tmp/dataset
 
