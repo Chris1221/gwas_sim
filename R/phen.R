@@ -48,14 +48,14 @@ phen <- function(gen, snps, nc, effects){
 #' @param phen Phenotype vector, maybe passed from \code{phen}
 #' @param file Path to output file.
 #' @return Nothing. Writes a file to path. Use magrittr::%T>% to passthrough and still write.
-make_sample <- function(phen, file) {
+make_sample <- function(phen, file, name) {
 
 	sample <- data.frame(matrix(ncol = 4, nrow = length(phen)))
 	colnames(sample) <- c("ID_1", "ID_2", "missing", "pheno")
 
 	sample$pheno <- phen
-	sample$ID_1 <- paste0("ID_", 1:nrow(sample))
-	sample$ID_2 <- paste0("ID_", 1:nrow(sample))
+	sample$ID_1 <- paste0("ID_", name, "_", 1:nrow(sample))
+	sample$ID_2 <- paste0("ID_", name, "_", 1:nrow(sample))
 	sample$missing <- 0
 
 	header <- data.frame(matrix(ncol = 4, nrow = 1))
@@ -71,13 +71,13 @@ make_sample <- function(phen, file) {
 }
 
 
-ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)/10
-yri_effects <- c(3,5,2,5,20,3,7,8,2,13)/5
+ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)/100
+yri_effects <- c(3,5,2,5,20,3,7,8,2,13)/50
 
 fread("output/ceu.gen") %>% 
 	phen(snps = "lib/snplist.txt", effects = ceu_effects) %>% 
-	make_sample(file = "output/ceu.sample")
+	make_sample(file = "output/ceu.sample", name = "ceu")
 
 fread("output/yri.gen") %>% 
 	phen(snps = "lib/snplist.txt", effects = yri_effects) %>% 
-	make_sample(file = "output/yri.sample")
+	make_sample(file = "output/yri.sample", name = "yri")
