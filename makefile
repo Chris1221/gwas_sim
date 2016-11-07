@@ -282,6 +282,7 @@ package:
 
 	$$plink --bfile tmp/ceu \
 		--bmerge tmp/yri \
+		--allow-no-sex \
 		--make-bed \
 		--out tmp/dataset
 
@@ -294,15 +295,17 @@ package:
 	tar -cvzf dataset.tgz tmp/
 
 
-assoc: format_gen
+assoc:
 	
 	$$plink --file output/ceu \
 		--allow-no-sex \
+		--maf 0.05 \
 		--assoc \
 		--out output/ceu
 
 	$$plink --file output/yri \
 		--allow-no-sex \
+		--maf 0.05 \
 		--assoc \
 		--out output/yri
 
