@@ -311,6 +311,13 @@ assoc:
 		--assoc \
 		--out output/yri
 
+	$$plink --bfile tmp/dataset \
+		--allow-no-sex \
+		--maf 0.05 \
+		--assoc \
+		--out output/dataset
+
+
 	#Rscript R/assoc.R
 
 
