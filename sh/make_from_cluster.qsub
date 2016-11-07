@@ -12,7 +12,6 @@
 
 cd ~/repos/gwas_sim/
 
+make merge_ped
 make sim_phen
 make package
-make assoc
-
