@@ -71,8 +71,8 @@ make_sample <- function(phen, file, name) {
 }
 
 
-ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)/30
-yri_effects <- c(3,5,2,5,20,3,7,8,2,13)/30
+ceu_effects <- c(4,5,5,6,2,1,9,8,2,15)/25
+yri_effects <- c(3,5,2,5,20,3,7,8,2,13)/25
 
 fread("output/ceu.gen") %>% 
 	phen(snps = "lib/snplist.txt", effects = ceu_effects) %>% 
