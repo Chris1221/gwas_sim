@@ -41,12 +41,14 @@ Simulation targets:
 - `genome_sim`: Downloads the reference panel, extracts the specific files, and uses `hapgen2` to simulate the new genomes into `output/`. Attempts to download files if not present. 
 - `gen_to_ped`: Converts the simulated Oxford style genotypes to plink format.
 - `format_gen`: Removes excess files generated along the way and formats the output to prepare for the next step. 
-- `combine`: Combines all chromosomes together into one (or two) files.
+- `sim_phen`: Simulated a phenotype.
+- `merge_ped`: Combines all chromosomes together into one (or two) files.
 - `package`: Packages all output into a convenience `.tgz` file for sharing. 
 
 Extra targets:
 
 - `assoc`: Runs a typical GWAS on the output and generates diagnostic plots in order to validate the simulation.
+- `mds`: Performs MDS to seperate populations.
 - `clean`: Cleans up everything in preparation for a clean run. This will delete reference panels so be careful.
 
 ### FAQ
