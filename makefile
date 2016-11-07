@@ -318,7 +318,7 @@ assoc:
 		--out output/dataset
 
 
-	#Rscript R/assoc.R
+	Rscript R/assoc.R
 
 
 ### Clean up the generated gen files
