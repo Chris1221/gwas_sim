@@ -257,8 +257,42 @@ merge_ped:
 sim_phen:
 	Rscript R/phen.R
 
+### Convert the completed simulation to a .tgz file archive
+#
+#	This file can be shared.
+package:	
+	mkdir tmp 
 
-combine: format_gen
+	# First convert both to plink format
+	# (I know, this is silly, but it seems to be the only way)
+	
+	$$plink --data output/ceu \
+		--allow-no-sex \
+		--make-bed \
+		--out tmp/ceu
+
+	$$plink --data output/yri \
+		--allow-no-sex \
+		--make-bed \
+		--out tmp/yri
+
+
+	# NOW merge them
+	# man, this is cumbersome
+
+	$$plink --bfile tmp/ceu \
+		--bmerge tmp/yri \
+		--make-bed \
+		--out tmp/dataset
+
+	# Remove these before packaging
+	rm tmp/yri.*
+	rm tmp/ceu.*
+
+	cp lib/README.md tmp/README.md
+
+
+assoc: format_gen
 	
 	$$plink --file output/ceu \
 		--allow-no-sex \
