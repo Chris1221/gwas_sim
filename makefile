@@ -290,8 +290,8 @@ package:
 	# Remove these before packaging
 	rm tmp/yri.*
 	rm tmp/ceu.*
-	rm tmp/data.set.log
-	rm tmp/data.set.nosex
+	rm tmp/dataset.log
+	rm tmp/dataset.nosex
 
 	cp lib/README.md tmp/README.md
 
