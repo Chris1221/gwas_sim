@@ -291,6 +291,8 @@ package:
 
 	cp lib/README.md tmp/README.md
 
+	tar -cvzf dataset.tgz tmp/
+
 
 assoc: format_gen
 	
