@@ -1,4 +1,6 @@
-m <- as.matrix(read.table("output/dataset.mdist"))
+library(data.table)
+
+m <- as.matrix(fread("output/dataset.mdist"))
 mds <- cmdscale(as.dist(1-m))
 k <- c( rep("green",4500) , rep("blue",50) )
 
