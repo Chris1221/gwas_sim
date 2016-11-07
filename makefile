@@ -261,7 +261,8 @@ sim_phen:
 #
 #	This file can be shared.
 package:	
-	mkdir tmp 
+	
+	if [ ! -d tmp ]; then mkdir tmp; fi 
 
 	# First convert both to plink format
 	# (I know, this is silly, but it seems to be the only way)
