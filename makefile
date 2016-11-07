@@ -289,6 +289,8 @@ package:
 	# Remove these before packaging
 	rm tmp/yri.*
 	rm tmp/ceu.*
+	rm tmp/data.set.log
+	rm tmp/data.set.nosex
 
 	cp lib/README.md tmp/README.md
 
@@ -309,7 +311,7 @@ assoc:
 		--assoc \
 		--out output/yri
 
-	Rscript R/assoc.R
+	#Rscript R/assoc.R
 
 
 ### Clean up the generated gen files
