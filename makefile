@@ -322,6 +322,15 @@ assoc:
 	Rscript R/assoc.R
 
 
+mds: 
+	$$plink --bfile tmp/dataset \
+		--allow-no-sex \
+		--cluster \
+		--matrix \
+		--out output/dataset
+	
+	Rscript R/mds.R
+
 ### Clean up the generated gen files
 #	This step cleans up unneccesary files and formats the output for
 #	easy integration into the next portion.
