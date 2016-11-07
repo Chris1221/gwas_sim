@@ -299,13 +299,13 @@ package:
 
 assoc:
 	
-	$$plink --file output/ceu \
+	$$plink --data output/ceu \
 		--allow-no-sex \
 		--maf 0.05 \
 		--assoc \
 		--out output/ceu
 
-	$$plink --file output/yri \
+	$$plink --data output/yri \
 		--allow-no-sex \
 		--maf 0.05 \
 		--assoc \
