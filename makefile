@@ -307,10 +307,13 @@ package:
 	rm tmp/ceu.*
 	rm tmp/dataset.log
 	rm tmp/dataset.nosex
+	rm tmp/sex.txt
 
-	cp lib/README.md tmp/README.md
+	mv tmp dataset
 
-	tar -cvzf dataset.tgz tmp/
+	cp lib/README.md dataset/README.md
+
+	tar -cvzf dataset.tgz dataset/
 
 # --------------------------------------------------- #
 #		END SIMULATION HERE		      #
