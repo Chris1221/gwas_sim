@@ -266,7 +266,7 @@ merge_ped:
 #	accordingly.
 sim_phen:
 	Rscript R/phen.R
-
+	Rscript R/make_sex.R
 ### Convert the completed simulation to a .tgz file archive
 #
 #	This file can be shared.
@@ -297,6 +297,7 @@ package:
 	$$plink --bfile tmp/ceu \
 		--bmerge tmp/yri \
 		--allow-no-sex \
+		--update-sex tmp/sex.txt \
 		--maf 0.01 \
 		--make-bed \
 		--out tmp/dataset
