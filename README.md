@@ -22,7 +22,7 @@ To submit the whole make job as a cluster job.
 
 The combined dataset has the following Manhattan plot and is perfectly seperated through MDS. See `make` targets `assoc` and `mds` to produce the following. 
 
-Manhattan Plot | QQ Plot
+Manhattan Plot | MDS Plot
 :---------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------:
 ![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/dataset.man.png) | ![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/mds.png)
 
