@@ -26,6 +26,14 @@ Manhattan Plot | MDS Plot
 :---------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------:
 ![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/dataset.man.png) | ![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/mds.png)
 
+Once split into the respective panels, divergent loci are observed in the Manhattan plots.
+
+CEU Population | YRI Population
+:---------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------:
+![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/ceu.man.png) | ![](https://github.com/Chris1221/gwas_sim/blob/master/diagnostics/yri.man.png)
+
+
+
 ### Description of `make` targets.
 
 The program contains several `make` targets with distinct recipies. The file is commented with a more complete description of the options, but a brief explaination is provided below.
